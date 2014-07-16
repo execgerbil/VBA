@@ -1,0 +1,50 @@
+Private Sub DatePlay()
+
+Dim dtmDate As Variant
+Dim myEOM As Variant
+Dim prevEOM As Date
+Dim myMonthInt As Variant
+Dim myMonthName As Variant
+Dim prevMonthInt As Variant
+Dim prevMonthName As Variant
+Dim myMonth As Variant
+Dim myPrevMonth As Variant
+Dim myYear As Variant
+Dim myPrevYear As Variant
+Dim lastDay As Variant
+Dim nextMonth As Variant
+
+
+
+
+dtmDate = Date
+lastDay = DateSerial(Year(dtmDate), Month(dtmDate) + 1, 0)
+myMonthInt = Month(dtmDate)
+myMonthName = Format(dtmDate, "mmmm")
+prevMonthInt = Month(DateAdd("m", -1, dtmDate))
+prevMonthName = Format(DateSerial(Year(Date), Month(Date) - 1, 1), "mmmm")
+myMonth = Format(myMonthInt, "0#")
+myPrevMonth = Format(prevMonthInt, "0#")
+myYear = Year(dtmDate)
+myPrevYear = Year(DateAdd("yyyy", -1, dtmDate))
+prevEOM = dtmDate - Day(dtmDate)
+
+
+
+
+MsgBox "Date is " & dtmDate & vbCrLf & _
+"Year is " & myYear & vbCrLf & _
+"Previous Year is " & myPrevYear & vbCrLf & _
+"Last Day of Month is " & lastDay & vbCrLf & _
+"PrevEOM is " & prevEOM & vbCrLf & _
+"Month Number is " & myMonthInt & vbCrLf & _
+"Month Name is " & myMonthName & vbCrLf & _
+"Previous Month Number is " & prevMonthInt & vbCrLf & _
+"Previous Month Name is " & prevMonthName & vbCrLf & _
+"2 Digit Month Number is " & myMonth & vbCrLf & _
+"2 Digit Previous Month is " & myPrevMonth
+
+
+
+
+End Sub
